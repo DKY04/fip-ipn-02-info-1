@@ -78,3 +78,6 @@ class Juice:
         if not isinstance(jsize, JuiceSize):
             raise TypeError('jsize type must be an instance of JuiceSize')
         self._size = jsize
+
+    def __str__(self):
+        return f"{self.type.name} - {self.size.name}"

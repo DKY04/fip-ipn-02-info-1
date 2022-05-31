@@ -6,7 +6,7 @@ Description
 
 """
 
-from juice import JuiceSize
+from juice import Juice
 
 
 class Card:
@@ -23,12 +23,17 @@ class Card:
 
     @property
     def selected_juices(self):
+        """ Get list of user selected juices which are in stock """
         return self._selected_juices
 
     def add_juice(self, juice):
-        if not isinstance(juice, JuiceSize):
+        if not isinstance(juice, Juice):
             raise TypeError('jsize type must be an instance of JuiceSize')
         self._selected_juices.append(juice)
 
     def delete_juice(self, index):
-        self._selected_juices.pop(index)
+        if len(self._selected_juices) >= index:
+            return False
+        else:
+            self._selected_juices.pop(index)
+            return True
