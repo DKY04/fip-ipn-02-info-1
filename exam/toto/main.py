@@ -12,19 +12,6 @@ from stock import Stock
 from juice import *
 
 
-def select(l_xtype, x_type):
-    sjtype = "\n1.{0}\t 2.{1}\t 3.{2}\t 4.{3} \n ".format(*jtypes)
-    sjsize = "\n1.{0}\t 2.{1}\t 3.{2} \n ".format(*jsizes)
-
-    print("Enter juiceType and juiceSize separated by ',' ")
-    usr_input = input(sjsize + "|" + sjtype)
-
-    if usr_input.upper() == "Q":
-        return "Quit"
-    else:
-        return True
-
-
 if __name__ == '__main__':
 
     stock = Stock()
